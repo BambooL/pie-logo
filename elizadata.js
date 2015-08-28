@@ -118,6 +118,14 @@ var elizaKeywords = [
  
 ]],
 
+["forward", 0, [
+ ["* forward * units *", [
+     "Let's forward #2# steps!",
+     "Okay, let's move ahead #2# steps!"
+     ],"fd #2#"]
+ 
+]],
+
 ["back", 0, [
  ["* back * steps *", [
      "Let's get back #2# steps!",
