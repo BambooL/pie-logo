@@ -55,7 +55,7 @@ body {
 
 #input-panel {
   position: absolute;
-  left: 0;
+  left: 0px;
   right: 400px;
   bottom: 0px;
   height: 60px;
@@ -91,6 +91,8 @@ body {
   left: 0; right: 0; top: 0; bottom: 0;
   overflow: hidden;
 }
+
+
 
 /* Header */
 
