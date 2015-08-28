@@ -164,7 +164,7 @@ function showInfo(s) {
 
 
 function saveAsLocalImage () {  
-                var myCanvas = document.getElementById("sandbox");  
+                var myCanvas = document.getElementById("turtle");  
                 // here is the most important part because if you dont replace you will get a DOM 18 exception.  
                 // var image = myCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream;Content-Disposition: attachment;filename=foobar.png");  
                 var image = myCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");   
