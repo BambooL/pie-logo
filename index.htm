@@ -161,18 +161,17 @@ function showInfo(s) {
 
 
 function saveAsLocalImage () {  
-                var myCanvas = document.getElementById("turtle");  
-                // here is the most important part because if you dont replace you will get a DOM 18 exception.  
-                // var image = myCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream;Content-Disposition: attachment;filename=foobar.png");  
-                var image = myCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");   
-                window.location.href=image; // it will save locally  
+                var canvas = document.querySelector('#sandbox');
+                var url = canvas.toDataURL('image/png');
+                if (!saveDataAs(url, 'logo_drawing.png'))
+                  alert("Sorry, not supported by your browser");
             }   
 
 
 // </script>
 
   <h1>PiE-LOGO</h1>
- <button id="downloadImageBtn" onclick="saveAsLocalImage ()">Download Image</button>  
+ <button id="downloadImageBtn" onclick="saveAsLocalImage()">Download Image</button>  
 
 
 </div>
