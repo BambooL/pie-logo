@@ -19,7 +19,7 @@ body {
   left: 0;
   right: 400px;
   top: 0;
-  height: 50px;
+  height: 100px;
 }
 
 
@@ -27,7 +27,7 @@ body {
   position: absolute;
   left: 0;
   right: 400px;
-  top: 50px;
+  top: 100px;
   bottom: 117px;
 }
 

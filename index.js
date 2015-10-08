@@ -16,10 +16,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// hostory record initiate
 
 document.write("<script language='javascript' src='eliza.js'></script>");
 document.write("<script language='javascript' src='elizadata.js'></script>");
-
 
 var eliza = new ElizaBot();
 function elizaReset() {
@@ -44,6 +44,19 @@ var logo, turtle;
 //
 var savehook;
 var historyhook;
+
+var history_record = {};
+
+
+function generateDownloadLink(file_name, file_content){
+  var json = JSON.stringify(file_content);
+  var blob = new Blob([json], {type: "application/json"});
+  var url  = URL.createObjectURL(blob);
+  var a = $('#download_link');
+  a.download    = file_name;
+  a.href        = url;
+  a.textContent = "save history";
+}
 
 function initStorage(loadhook) {
   if (!window.indexedDB)
@@ -224,7 +237,15 @@ var input = {};
       return;
     } 
 
-      // v=eliza.transform("can you go forward 100 steps")[0];
+    // record
+    var index = Date.now();
+    history_record[index] = {};
+    history_record[index]["username"] = sessionStorage.getItem("username");
+    history_record[index]["content"] = nl;
+    var file_name = sessionStorage.getItem("username") + "_history";
+    generateDownloadLink(file_name, history_record);
+
+    // v=eliza.transform("can you go forward 100 steps")[0];
     
     var eliza = new ElizaBot();
     // console.log(eliza.transform("can you go forward 100 steps")[1]);
@@ -237,6 +258,15 @@ var input = {};
     }
     // var v=eliza.transform(nl)[1]
     document.all.response.value=dialogue;
+
+    //save resposne
+    var index = Date.now();
+    history_record[index] = {};
+    history_record[index]["username"] = "system";
+    history_record[index]["content"] = dialogue;
+    var file_name = sessionStorage.getItem("username") + "_history";
+    generateDownloadLink(file_name, history_record);
+
     // var v=elizaStep();
     console.log("before "+v);
     v=substitution(v, commandHistory);
