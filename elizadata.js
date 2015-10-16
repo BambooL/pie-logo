@@ -109,8 +109,16 @@ var elizaKeywords = [
  
 ]],
 
+["clean", 0, [
+ ["* clean *", [
+     "Let's clear the screen!",
+     "Okay, let's clear up all the drawings!"
+     ],"cs"]
+ 
+]],
+
 // Move the turtle
-["forward", 0, [
+["forward", 5, [
  ["* forward * steps *", [
      "Let's forward #2# steps!",
      "Okay, let's move ahead #2# steps!"
@@ -118,7 +126,7 @@ var elizaKeywords = [
  
 ]],
 
-["forward", 0, [
+["forward", 5, [
  ["* forward * units *", [
      "Let's forward #2# steps!",
      "Okay, let's move ahead #2# steps!"
@@ -126,7 +134,15 @@ var elizaKeywords = [
  
 ]],
 
-["back", 0, [
+["forward", 0, [
+ ["* forward * ", [
+     "Let's forward #2# steps!",
+     "Okay, let's move ahead #2# steps!"
+     ],"fd #2#"]
+ 
+]],
+
+["back", 5, [
  ["* back * steps *", [
      "Let's get back #2# steps!",
      "Okay, let's move back #2# steps!"
@@ -134,8 +150,24 @@ var elizaKeywords = [
  
 ]],
 
-["ahead", 0, [
+["ahead", 5, [
  ["* ahead * steps *", [
+     "Let's forward #2# steps!",
+     "Okay, let's move ahead #2# steps!"
+     ],"fd #2#"]
+ 
+]],
+
+["back", 0, [
+ ["* back *", [
+     "Let's get back #2# steps!",
+     "Okay, let's move back #2# steps!"
+     ],"bk #2#"]
+ 
+]],
+
+["ahead", 0, [
+ ["* ahead *", [
      "Let's forward #2# steps!",
      "Okay, let's move ahead #2# steps!"
      ],"fd #2#"]
@@ -150,48 +182,17 @@ var elizaKeywords = [
  
 ]],
 
-["forward", 0, [
- ["* forward * step *", [
-     "Let's forward #2# steps!",
-     "Okay, let's move ahead #2# steps!"
-     ],"fd #2#"]
- 
-]],
-
-["back", 0, [
- ["* back * step *", [
-     "Let's get back #2# steps!",
-     "Okay, let's move back #2# steps!"
-     ],"bk #2#"]
- 
-]],
-
-["ahead", 0, [
- ["* ahead * step *", [
-     "Let's forward #2# steps!",
-     "Okay, let's move ahead #2# steps!"
-     ],"fd #2#"]
- 
-]],
-
-["backwards", 0, [
- ["* backwards * step *", [
-     "Let's get back #2# steps!",
-     "Okay, let's move back #2# steps!"
-     ],"bk #2#"]
- 
-]],
 
 
-["left", 1, [
+["left", 5, [
  ["* turn left * degrees *", [
      "Let's turn left #2# degrees!",
      "Okay, let's turn #2# degrees to the left!"
      ],"left #2#"] 
 ]],
 
-["left", 1, [
- ["* turn * degrees to the left*", [
+["left", 5, [
+ ["* turn * degrees to the left *", [
      "Let's turn #2# degrees to the left!",
      "Okay, let's turn #2# degrees to the left!"
      ],"left #2#"] 
@@ -199,7 +200,22 @@ var elizaKeywords = [
 
 
 ["left", 0, [
- ["* turn left", [
+ ["* turn left *", [
+     "Let's turn left #2# degrees!",
+     "Okay, let's turn #2# degrees to the left!"
+     ],"left #2#"] 
+]],
+
+["left", 5, [
+ ["* turn * to the left *", [
+     "Let's turn #2# degrees to the left!",
+     "Okay, let's turn #2# degrees to the left!"
+     ],"left #2#"] 
+]],
+
+
+["left", 1, [
+ ["turn left", [
      "Let's turn left!",
      "Okay, let's turn to the left!"
      ],"left 90"]
@@ -207,22 +223,36 @@ var elizaKeywords = [
 
 
 
-["right", 1, [
+["right", 5, [
  ["* turn right * degrees *", [
      "Let's turn right #2# degrees!",
      "Okay, let's turn #2# degrees to the right!"
      ],"right #2#"] 
 ]],
 
-["right", 1, [
+["right", 5, [
  ["* turn * degrees to the right*", [
      "Let's turn #2# degrees to the right!",
      "Okay, let's turn #2# degrees to the right!"
      ],"right #2#"] 
 ]],
 
-
 ["right", 0, [
+ ["* turn right *", [
+     "Let's turn right #2# degrees!",
+     "Okay, let's turn #2# degrees to the right!"
+     ],"right #2#"] 
+]],
+
+["right", 5, [
+ ["* turn * to the right *", [
+     "Let's turn #2# degrees to the right!",
+     "Okay, let's turn #2# degrees to the right!"
+     ],"right #2#"] 
+]],
+
+
+["right", 1, [
  ["* turn right", [
      "Let's turn right!",
      "Okay, let's turn to the right!"
@@ -262,12 +292,62 @@ var elizaKeywords = [
 ]],
 
 
-["repeat", 0, [
+["repeat", 5, [
  ["* repeat * last * commands for * times", [
      "Okay, Let's repeat last #3# commands for #4# times!",
      ],"repeat #4# \"last\" #3#"]
  
 ]],
+
+["repeat", 0, [
+ ["* repeat * last * for * times", [
+     "Okay, Let's repeat last #3# commands for #4# times!",
+     ],"repeat #4# \"last\" #3#"]
+ 
+]],
+
+["repeat", 5, [
+ ["* repeat * previous * commands for * times", [
+     "Okay, Let's repeat last #3# commands for #4# times!",
+     ],"repeat #4# \"last\" #3#"]
+ 
+]],
+
+["repeat", 0, [
+ ["* repeat * previous * for * times", [
+     "Okay, Let's repeat last #3# commands for #4# times!",
+     ],"repeat #4# \"last\" #3#"]
+ 
+]],
+
+["redo", 5, [
+ ["* redo * last * commands for * times", [
+     "Okay, Let's repeat last #3# commands for #4# times!",
+     ],"repeat #4# \"last\" #3#"]
+ 
+]],
+
+["repeat", 0, [
+ ["* redo * last * for * times", [
+     "Okay, Let's repeat last #3# commands for #4# times!",
+     ],"repeat #4# \"last\" #3#"]
+ 
+]],
+
+["redo", 5, [
+ ["* redo * previous * commands for * times", [
+     "Okay, Let's repeat last #3# commands for #4# times!",
+     ],"repeat #4# \"last\" #3#"]
+ 
+]],
+
+["redo", 0, [
+ ["* redo * previous * for * times", [
+     "Okay, Let's repeat last #3# commands for #4# times!",
+     ],"repeat #4# \"last\" #3#"]
+ 
+]],
+
 
 // change attributes
 ["bolder", 0, [
@@ -370,7 +450,7 @@ var elizaKeywords = [
 
 // scope
 
-["if", 1, [
+["down", 1, [
  ["* get down *", [
      "Okay, Let's put the turtle back on the canvas!",
      ],"pendown"]
